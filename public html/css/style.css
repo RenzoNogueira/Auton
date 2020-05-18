@@ -1,0 +1,21 @@
+.logo_cabecalho {
+    font-size: 1.8em;
+    font-family: fantasy;
+    color: #444444;
+    margin-right: 2em;
+    text-shadow: 0 2px 3px grey;
+}
+
+.logo {
+    font-size: 3em;
+    font-family: fantasy;
+    color: #444444;
+    padding-top: 1em;
+    text-shadow: 0 2px 3px grey;
+}
+
+.descricao_empresa {
+    padding-top: 3em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
