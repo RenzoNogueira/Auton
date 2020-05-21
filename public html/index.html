@@ -88,14 +88,14 @@
         </div>
 
         <!-- Contato -->
-        <div class="parallax" style="padding: 3em; background-image: url('img/Pedras.jpg');">
+        <div class="parallax" style="padding: 3em; background-image: url('img/pedras.jpg');">
             <div style="text-align: center;">
                 <h4>Contate-nos</h4>
-                <p>Entre em contato conosco através do formulário ou email abaixo e descubra agora como começar!</p>
+                <p>Entre em contato através do formulário ou e-mail abaixo e descubra agora como começar!</p>
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <form id="main-contact-form" name="contact-form" method="post" action="enviar.php">
+                    <form onsubmit="contate_nos()" id="main-contact-form" name="contact-form" method="post" action="#">
                         <div class="row  wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms"
                             style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
                             <div class="col-sm-6">
@@ -106,8 +106,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="tel" class="form-control" placeholder="Telefone "
-                                        required="required">
+                                    <input type="text" name="tel" class="form-control phone" placeholder="Telefone"
+                                        minlength="13" required="required">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,10 @@
                     </form>
                 </div>
                 <div class="col-sm center">
-                    <p>E-mail: teste@teste.com</p>
+                    <div style="text-align: center;">
+                        <h6>E-mail para contato</h6>
+                        <p> teste@teste.com</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,33 +147,30 @@
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Nossas redes sociais</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Very long link 1</a>
+                            <a href="#!">Facebook</a>
                         </li>
                         <li>
-                            <a href="#!">Very long link 2</a>
+                            <a href="#!">Instagram</a>
                         </li>
                         <li>
-                            <a href="#!">Very long link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Very long link 4</a>
+                            <a href="#!">Twitter</a>
                         </li>
                     </ul>
 
                 </div>
                 <!-- Grid column -->
 
-                <hr class="clearfix w-100 d-md-none">
+                <!-- <hr class="clearfix w-100 d-md-none"> -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
@@ -185,18 +185,18 @@
                         <li>
                             <a href="#!">Link 4</a>
                         </li>
-                    </ul>
+                    </ul> -->
 
                 </div>
                 <!-- Grid column -->
 
-                <hr class="clearfix w-100 d-md-none">
+                <!-- <hr class="clearfix w-100 d-md-none"> -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
@@ -211,18 +211,18 @@
                         <li>
                             <a href="#!">Link 4</a>
                         </li>
-                    </ul>
+                    </ul> -->
 
                 </div>
                 <!-- Grid column -->
 
-                <hr class="clearfix w-100 d-md-none">
+                <!-- <hr class="clearfix w-100 d-md-none"> -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
@@ -237,7 +237,7 @@
                         <li>
                             <a href="#!">Link 4</a>
                         </li>
-                    </ul>
+                    </ul> -->
 
                 </div>
                 <!-- Grid column -->
@@ -258,13 +258,9 @@
     <!-- Footer -->
 
     <script src="frameworks/jquery/jquery.min.js"></script>
+    <script src="frameworks/jquery/jquery.mask.js"></script>
     <script src="frameworks/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        window.onload = () => {
-            document.querySelector('#spinner').style.display = 'none';
-        }
-    </script>
 </body>
 
 </html>
