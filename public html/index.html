@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.min.css">
+    <!-- Customizado -->
     <link rel="stylesheet" href="css/style.css">
     <title>Auton</title>
 </head>
@@ -12,15 +16,29 @@
 <body>
 
     <div id="spinner" class="center">
-        <div class="spinner-grow text-primary" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="spinner spinner-grow" role="status" aria-hidden="true"></div>
+        <strong>Aguarde...</strong>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <i style="color: green;" class="material-icons">check</i>
+            <strong class="mr-auto">Concluído</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            A sua mensagem foi enviada para a nossa equipe, e em breve entraremos em contacto.
         </div>
     </div>
 
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
-            <a class="logo_cabecalho" class="navbar-brand" href="#">Auton</a>
+            <div class="d-none d-md-block">
+                <a class="logo_cabecalho" class="navbar-brand" href="index.html">Auton</a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +64,7 @@
         </nav>
     </header>
     <main>
-        <div data-spy="scroll" data-target="#navbar" data-offset="0">
+        <div data-target="#navbar">
             <div class="container" id="sobre">
                 <div class="row">
                     <div class="col-sm center">
@@ -95,39 +113,67 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <form onsubmit="contate_nos()" id="main-contact-form" name="contact-form" method="post" action="#">
+                    <form onsubmit="contate_nos()" id="main-contact-form" name="contact-form" action="#">
                         <div class="row  wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms"
                             style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="nome" class="form-control" placeholder="Nome"
-                                        required="required">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label d-none d-lg-block d-xl-block" for="nome"><i
+                                            class="material-icons md-light">person</i></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome"
+                                            required>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="tel" class="form-control phone" placeholder="Telefone"
-                                        minlength="13" required="required">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label d-none d-lg-block d-xl-block" for="tell"><i
+                                            class="material-icons md-light">
+                                            local_phone</i></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="tell" name="tel" class="form-control phone"
+                                            placeholder="Telefone" minlength="13" required>
+                                        <div class="invalid-feedback">
+                                            Complete esse campo
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="E-mail"
-                                required="required">
+                        <div class="form-group row">
+                            <label class="col-sm-1 col-form-label d-none d-lg-block d-xl-block" for="e_mail"><i
+                                    class="material-icons md-light">email</i></label>
+                            <div class="col-sm-11">
+                                <input type="email" id="e_mail" name="email" class="form-control" placeholder="E-mail"
+                                    required>
+                                <div class="invalid-feedback">
+                                    O formato de e-mail não é conhecido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-1 col-form-label d-none d-lg-block d-xl-block" for="mensagem"><i
+                                    class="material-icons md-light">edit</i></label>
+                            <div class="col-sm-11">
+                                <textarea name="message" id="mensagem" class="form-control" rows="4"
+                                    placeholder="Escreva sua mensagem" required></textarea>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="mensagem" class="form-control" rows="4"
-                                placeholder="Escreva sua mensagem" required="required"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn-submit">ENVIAR</button>
+                            <center>
+                                <button type="submit" class="btn-submit">ENVIAR</button>
+                            </center>
                         </div>
                     </form>
                 </div>
                 <div class="col-sm center">
                     <div style="text-align: center;">
                         <h6>E-mail para contato</h6>
-                        <p> teste@teste.com</p>
+                        <div style="display: flex;">
+                            <i class="material-icons md-light" style="margin-right: 0.3em;">email</i>
+                            <p>teste@teste.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -250,7 +296,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            © 2020 Auton
+            © 2020 - <span id="year">2020</span> Auton
         </div>
         <!-- Copyright -->
 
