@@ -11,8 +11,15 @@
 
 <body>
 
+    <div id="spinner" class="center">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
             <a class="logo_cabecalho" class="navbar-brand" href="#">Auton</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,36 +34,99 @@
                             Nossos serviços
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Hospede o seu site</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Nossos Webmasters</a>
+                            <a class="dropdown-item" href="#hospedagem">Hospede o seu site</a>
+                            <a class="dropdown-item" href="#webmasters">Nossos Webmasters</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre a empresa</a>
+                        <a class="nav-link" href="#sobre">Sobre a empresa</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <div>
-            <div>
-                <center>
-                    <h1 class="logo">Auton</h1>
-                    <p>A solução dos seus serviços</p>
-                </center>
+        <div data-spy="scroll" data-target="#navbar" data-offset="0">
+            <div class="container" id="sobre">
+                <div class="row">
+                    <div class="col-sm center">
+                        <img class="img-fluid" style="width: 18em;" src="img/logo.jpg" alt="logo">
+                    </div>
+                    <div class="col-sm center">
+                        <div>
+                            <h2>Sobre nós</h2>
+                            <p>
+                                Auton é uma empresa de autónomos dispostos a te ajudar. Podemos fazer os seus sites, e
+                                oferecemos um
+                                serviço rápido e barato de hospedagem. Além de te oferecermos um domínio gratuito para o
+                                seus
+                                sites
+                                hospedados em nossos serviços.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Seviços -->
             <div>
-                <center>
-                    <p class="descricao_empresa">
-                        Auton é uma empresa de autónomos dispostos a te ajudar. Podemos fazer os seus sites, e
-                        oferecemos um
-                        serviço rápido e barato de hospedagem. Além de te oferecermos um domínio gratuito para o seus
-                        sites
-                        hospedados em nossos serviços.
-                    </p>
-                </center>
+                <div id="hospedagem">
+                    <img class="img-fluid" src="img/image_1.png" alt="Hospedagem de sites">
+                    <div class="text_card parallax" style="background-image: url('img/formas.png');">
+                        <p>Temos um serviço rápido e barato para hospedar o seu site.</p>
+                    </div>
+                </div>
+
+                <div id="webmasters">
+                    <img class="img-fluid" src="img/image_2.png" alt="Criamos o seu site">
+                    <div class="text_card parallax" style="background-image: url('img/formas.png');">
+                        <p>Nossa equipe pode criar o seu site por um preço justo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contato -->
+        <div class="parallax" style="padding: 3em; background-image: url('img/Pedras.jpg');">
+            <div style="text-align: center;">
+                <h4>Contate-nos</h4>
+                <p>Entre em contato conosco através do formulário ou email abaixo e descubra agora como começar!</p>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <form id="main-contact-form" name="contact-form" method="post" action="enviar.php">
+                        <div class="row  wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms"
+                            style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome"
+                                        required="required">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="tel" class="form-control" placeholder="Telefone "
+                                        required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="E-mail"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="mensagem" class="form-control" rows="4"
+                                placeholder="Escreva sua mensagem" required="required"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-submit">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm center">
+                    <p>E-mail: teste@teste.com</p>
+                </div>
             </div>
         </div>
     </main>
@@ -179,8 +249,8 @@
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        <div class="footer-copyright text-center py-3">
+            © 2020 Auton
         </div>
         <!-- Copyright -->
 
@@ -190,6 +260,11 @@
     <script src="frameworks/jquery/jquery.min.js"></script>
     <script src="frameworks/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        window.onload = () => {
+            document.querySelector('#spinner').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

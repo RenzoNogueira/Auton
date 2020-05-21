@@ -1,3 +1,8 @@
+body {
+    color: black;
+    position: relative;
+}
+
 .logo_cabecalho {
     font-size: 1.8em;
     font-family: fantasy;
@@ -14,8 +19,66 @@
     text-shadow: 0 2px 3px grey;
 }
 
-.descricao_empresa {
-    padding-top: 3em;
-    padding-left: 4em;
-    padding-right: 4em;
+.full_image {
+    width: 100%;
+}
+
+main {
+    background-color: #6b78c1;
+}
+
+.text_card {
+    text-align: center;
+    padding: 3em;
+    font-size: 1.2em;
+}
+
+footer {
+    background: #f8f9fa !important;
+}
+
+#div_logo {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 3em;
+}
+
+.center {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+textarea.form-control {
+    min-height: 180px;
+    resize: none;
+}
+
+.parallax {
+    /* The image used */
+    /* background-image: url("../img/Pedras.jpg"); */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#spinner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffff;
+    z-index: 99999;
+}
+
+.btn-submit {
+    background-color: #78c16b;
+    /* border-radius: 10px; */
+    padding: 0.5em;
+    width: 10em;
+    border: none;
 }
